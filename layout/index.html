@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>M3 prueba</title>
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="wrapper">
+        <form action="#" class="form js-form">
+            <section>
+                <h2>Screen size</h2>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" name="size" value="13" /> 13"</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="size" value="15" /> 15"</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="size" value="17" /> 17"</label>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Color</h2>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" name="color" value="white" /> white</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" name="color" value="gray" /> gray</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" name="color" value="black" /> black</label
+            >
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Release date</h2>
+        <ul>
+          <li>
+            <label
+              ><input type="checkbox" name="release_date" value="2015" />
+              2015</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" name="release_date" value="2016" />
+              2016</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" name="release_date" value="2017" />
+              2017</label
+            >
+          </li>
+        </ul>
+      </section>
+      <button type="submit" class="submit">Filter</button>
+      <button type="reset" class="reset">Clear</button>
+    </form>
+
+    <div class="root">
+      
+    </div>
+   <script type="hbs/template" id="card">
+      <div class="card">       
+        <img src="{{img}}" alt="" class="card__img">
+        <div class="card__name">{{name}}</div>
+        <div class="card__size">Display: {{size}}</div>
+        <div class="card__color">Color: {{color}}</div>
+        <div class="card_releas-date">Release Date: {{release_date}} year</div>
+        <div class="card__description">
+            Specifications: {{descr}}</div>
+        <div class="card__price">{{price}}$</div>        
+      </div>
+    </script>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
