@@ -1,0 +1,72 @@
+@media screen and (max-width: 680px) {
+    .navbar {
+        max-height: 60px;
+        padding: 30px;
+    }
+    .navbar-collapse {
+        display: grid;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        width: 100vw;
+        background: #ffffff;
+        border-bottom: 1px solid #ffffff;
+        top: -999px;
+        transition: 0.3s ease;
+    }
+    .navbar-collapse a {
+        border-top: 1px solid #ff5672;
+    }
+    .navbar-collapse a:hover {
+        border-top: 1px solid #ffffff;
+    }
+    .navbar .navbar-header .navbar-brand {
+        top: 12px;
+        left: 20px;
+        height: 40px;
+        padding: 0px 0 0px 0px;
+    }
+    .search-box {
+        top: -12px;
+        right: 60px;
+    }
+    .m-icon {
+        width: 40px;
+        height: inherit;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        line-height: 80px;
+    }
+    #menuToggle:checked~#menu {
+        /* left: 0; */
+        animation: 0.45s annimate;
+        animation-fill-mode: forwards;
+        margin-top: 88px;
+    }
+    .m-icon .i-menu {
+        width: 20px;
+    }
+    .m-icon .i-menu path {
+        fill: #ff5672;
+    }
+    .m-icon .i-menu:hover {
+        cursor: pointer;
+    }
+}
+
+@keyframes annimate {
+    50% {
+        top: -400px;
+        z-index: -1;
+    }
+    99% {
+        top: -40px;
+        z-index: -1;
+    }
+    100% {
+        top: -28px;
+        z-index: 1;
+    }
+}

@@ -3,7 +3,7 @@ const source = document.querySelector('#card').innerHTML.trim();
 const template = Handlebars.compile(source);
 
 const laptops = [{
-        size: 13,
+        size: 'S',
         color: "white",
         price: '28,00',
         release_date: 2015,
@@ -12,7 +12,7 @@ const laptops = [{
         descr: "até 3x de R$ 9,33"
     },
     {
-        size: 13,
+        size: 'S',
         color: "gray",
         price: '398,00',
         release_date: 2016,
@@ -21,7 +21,7 @@ const laptops = [{
         descr: "até 5x R$ 30,00"
     },
     {
-        size: 13,
+        size: 'S',
         color: "black",
         price: '398,00',
         release_date: 2017,
@@ -30,7 +30,7 @@ const laptops = [{
         descr: "até 5x r$ 30,00"
     },
     {
-        size: 15,
+        size: 'M',
         color: "white",
         price: '99,90',
         release_date: 2015,
@@ -39,7 +39,7 @@ const laptops = [{
         descr: "até 3x r$ 33,30"
     },
     {
-        size: 15,
+        size: 'M',
         color: "gray",
         price: '129,90',
         release_date: 2016,
@@ -48,7 +48,7 @@ const laptops = [{
         descr: "até 3x r$ 43,43"
     },
     {
-        size: 15,
+        size: 'M',
         color: "black",
         price: '398,00',
         release_date: 2017,
@@ -57,7 +57,7 @@ const laptops = [{
         descr: "até 5x r$ 30,00"
     },
     {
-        size: 17,
+        size: 'L',
         color: "white",
         price: '120,00',
         release_date: 2015,
@@ -66,7 +66,7 @@ const laptops = [{
         descr: "até 3x r$ 40,00"
     },
     {
-        size: 17,
+        size: 'L',
         color: "gray",
         price: '398,00',
         release_date: 2016,
@@ -75,7 +75,7 @@ const laptops = [{
         descr: "até 5x r$ 30,00"
     },
     {
-        size: 17,
+        size: 'L',
         color: "black",
         price: '99,00',
         release_date: 2017,
@@ -136,7 +136,7 @@ btn.addEventListener("click", e => {
 
     checkedList.forEach(elem => {
         if (elem.name == "size") {
-            filter.size.push(+elem.value);
+            filter.size.push(elem.value);
         } else if (elem.name == "color") {
             filter.color.push(elem.value);
         } else if (elem.name == "release_date") {

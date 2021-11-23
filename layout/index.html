@@ -4,91 +4,199 @@
 <head>
     <meta charset="UTF-8">
     <title>M3 prueba</title>
-    <link rel="stylesheet" href="./styles.css">
-
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
+    <header>
+        <div class="navbar">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img class="" alt="M3 logo" src="./imagens/logo-m3.png">
+                </a>
+            </div>
+            <input type="checkbox" id="menuToggle">
+            <label for="menuToggle" class="m-icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="i-menu" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></label>
+            <nav class="navbar-menu navbar-collapse derecha" id="menu">
+                <a href="#s1" class="active">All</a>
+                <a href="#s2">Branding</a>
+                <a href="#s3">Web</a>
+                <a href="#s4">Photography</a>
+                <a href="#s3">App</a>
+            </nav>
+
+        </div>
+    </header>
+    <div class="grid-separate">
+        <h1 class="ropa-tipo">Blusas</h1>
+        <div class="custom-select" style="width:150px;">
+            <select id="ddlProducts" name="ddProducts">
+                <option value="0">Ordenar por:</option>
+                <option value="1">Mais recentes</option>
+                <option value="2">Menor preço</option>
+                <option value="3">Mayor preço</option>
+            </select>
+        </div>
+    </div>
     <!-- partial:index.partial.html -->
     <div class="wrapper">
+
         <form action="#" class="form js-form">
             <section>
-                <h2>Screen size</h2>
+                <h2>Cores</h2>
                 <ul>
                     <li>
-                        <label><input type="checkbox" name="size" value="13" /> 13"</label>
+                        <label><input type="checkbox" name="color" value="white" /> white</label>
                     </li>
                     <li>
-                        <label><input type="checkbox" name="size" value="15" /> 15"</label>
+                        <label><input type="checkbox" name="color" value="gray" /> gray</label>
                     </li>
                     <li>
-                        <label><input type="checkbox" name="size" value="17" /> 17"</label>
+                        <label><input type="checkbox" name="color" value="black" /> black</label>
                     </li>
                 </ul>
             </section>
+
             <section>
-                <h2>Color</h2>
+                <h2>Tamanhos</h2>
                 <ul>
                     <li>
-                        <label><input type="checkbox" name="color" value="white" /> white</label
-            >
-          </li>
-          <li>
-            <label
-              ><input type="checkbox" name="color" value="gray" /> gray</label
-            >
-          </li>
-          <li>
-            <label
-              ><input type="checkbox" name="color" value="black" /> black</label
-            >
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h2>Release date</h2>
-        <ul>
-          <li>
-            <label
-              ><input type="checkbox" name="release_date" value="2015" />
-              2015</label
-            >
-          </li>
-          <li>
-            <label
-              ><input type="checkbox" name="release_date" value="2016" />
-              2016</label
-            >
-          </li>
-          <li>
-            <label
-              ><input type="checkbox" name="release_date" value="2017" />
-              2017</label
-            >
-          </li>
-        </ul>
-      </section>
-      <button type="submit" class="submit">Filter</button>
-      <button type="reset" class="reset">Clear</button>
-    </form>
+                        <label><input type="checkbox" name="size" value="S" /> S</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="size" value="M" /> M</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="size" value="L" /> L</label>
+                    </li>
+                </ul>
+            </section>
 
-    <div class="root">
-      
+            <section>
+                <h2>Release date</h2>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" name="release_date" value="2015" />2015</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="release_date" value="2016" />2016</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" name="release_date" value="2017" />2017</label>
+                    </li>
+                </ul>
+            </section>
+            <button type="submit" class="submit">Filter</button>
+            <button type="reset" class="reset">Clear</button>
+        </form>
+
+        <div class="root">
+
+        </div>
+
     </div>
-   <script type="hbs/template" id="card">
-      <div class="card">       
-        <img src="{{img}}" alt="" class="card__img">
-        <div class="card__name">{{name}}</div>
-        <div class="card__size">Display: {{size}}</div>
-        <div class="card__color">Color: {{color}}</div>
-        <div class="card_releas-date">Release Date: {{release_date}} year</div>
-        <div class="card__description">
-            Specifications: {{descr}}</div>
-        <div class="card__price">{{price}}$</div>        
-      </div>
+    <div class="center"><button class="btn btn-primary">Carregar Mais</button></div>
+
+    <footer class="footer-m3">Agência M3 - Agência de Performance Digital</footer>
+    <script type="hbs/template" id="card">
+        <div class="card">
+            <img src="{{img}}" alt="" class="card__img">
+            <div class="card__name">{{name}}</div>
+            <div class="card__price">R$ {{price}}</div>
+            <!-- <div class="card__size">Display: {{size}}</div>
+            <div class="card__color">Color: {{color}}</div> -->
+            <!-- <div class="card_releas-date">Release Date: {{release_date}} year</div> -->
+            <div class="card__description">Specifications: {{descr}}</div>
+            <button class="btn btn-secondary">Comprar</button>
+        </div>
     </script>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script><script  src="./script.js"></script>
+    <script>
+        var x, i, j, l, ll, selElmnt, a, b, c;
+        /*look for any elements with the class "custom-select":*/
+        x = document.getElementsByClassName("custom-select");
+        l = x.length;
+        for (i = 0; i < l; i++) {
+            selElmnt = x[i].getElementsByTagName("select")[0];
+            ll = selElmnt.length;
+            /*for each element, create a new DIV that will act as the selected item:*/
+            a = document.createElement("DIV");
+            a.setAttribute("class", "select-selected");
+            a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+            x[i].appendChild(a);
+            /*for each element, create a new DIV that will contain the option list:*/
+            b = document.createElement("DIV");
+            b.setAttribute("class", "select-items select-hide");
+            for (j = 1; j < ll; j++) {
+                /*for each option in the original select element,
+                create a new DIV that will act as an option item:*/
+                c = document.createElement("DIV");
+                c.innerHTML = selElmnt.options[j].innerHTML;
+                c.addEventListener("click", function(e) {
+                    /*when an item is clicked, update the original select box,
+                    and the selected item:*/
+                    var y, i, k, s, h, sl, yl;
+                    s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                    sl = s.length;
+                    h = this.parentNode.previousSibling;
+                    for (i = 0; i < sl; i++) {
+                        if (s.options[i].innerHTML == this.innerHTML) {
+                            s.selectedIndex = i;
+                            h.innerHTML = this.innerHTML;
+                            y = this.parentNode.getElementsByClassName("same-as-selected");
+                            yl = y.length;
+                            for (k = 0; k < yl; k++) {
+                                y[k].removeAttribute("class");
+                            }
+                            this.setAttribute("class", "same-as-selected");
+                            break;
+                        }
+                    }
+                    h.click();
+                });
+                b.appendChild(c);
+            }
+            x[i].appendChild(b);
+            a.addEventListener("click", function(e) {
+                /*when the select box is clicked, close any other select boxes,
+                and open/close the current select box:*/
+                e.stopPropagation();
+                closeAllSelect(this);
+                this.nextSibling.classList.toggle("select-hide");
+                this.classList.toggle("select-arrow-active");
+            });
+        }
+
+        function closeAllSelect(elmnt) {
+            /*a function that will close all select boxes in the document,
+            except the current select box:*/
+            var x, y, i, xl, yl, arrNo = [];
+            x = document.getElementsByClassName("select-items");
+            y = document.getElementsByClassName("select-selected");
+            xl = x.length;
+            yl = y.length;
+            for (i = 0; i < yl; i++) {
+                if (elmnt == y[i]) {
+                    arrNo.push(i)
+                } else {
+                    y[i].classList.remove("select-arrow-active");
+                }
+            }
+            for (i = 0; i < xl; i++) {
+                if (arrNo.indexOf(i)) {
+                    x[i].classList.add("select-hide");
+                }
+            }
+        }
+        /*if the user clicks anywhere outside the select box,
+        then close all select boxes:*/
+        document.addEventListener("click", closeAllSelect);
+    </script>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
+    <script src="./js/script.js"></script>
 
 </body>
+
 </html>

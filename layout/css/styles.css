@@ -1,34 +1,277 @@
-.wrapper {
-    display: flex;
-}
-
-.form {
-    margin: 5px;
-    width: 200px;
-    padding: 10px;
-    border: 2px solid rgba(0, 0, 0, .1);
-    flex-shrink: 0;
-}
-
-.card {
-    width: 250px;
-    margin: 15px;
-}
-
-.card__img {
-    width: 100%;
-}
-
-.root {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-div {
-    margin: 5px 0;
-}
-
-.card__name {
-    font-size: 20px;
-    font-weight: bold;
-}
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+            body {
+                font-family: 'Questrial', sans-serif;
+                font-size: 14px;
+            }
+            /*=====Header=====*/
+            /*==Navigation==*/
+            
+            .navbar {
+                max-height: 80px;
+                width: 100vw;
+                position: fixed;
+                padding: 30px 40px;
+                background: #ffffff;
+                display: flex;
+                z-index: 1;
+                border-bottom: 2px solid #cbcbcb;
+            }
+            /*==Logo==*/
+            
+            .navbar .navbar-header {
+                flex-grow: 1;
+            }
+            
+            .navbar .navbar-header .navbar-brand {
+                outline: none;
+                position: absolute;
+                top: 15px;
+                height: 65px;
+                padding: 15px 0 15px 10px;
+                margin-right: 35px !important;
+            }
+            
+            .navbar-collapse {
+                margin-right: 20px;
+            }
+            
+            .navbar-menu a {
+                font-size: 14px;
+                padding: 14px 33px 12px 28px;
+                color: #707070;
+            }
+            
+            .navbar-menu a.active,
+            .navbar-menu a:hover {
+                background: #2bbff2;
+                color: #ffffff;
+            }
+            
+            #menuToggle {
+                display: none;
+            }
+            
+            .m-icon {
+                display: none;
+            }
+            /*============CONTENT==============*/
+            
+            .grid-separate {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                position: absolute;
+                top: 90px;
+                padding: 20px 8px;
+                width: 100%;
+                max-width: 80%;
+                margin-left: 10%;
+            }
+            
+            .custom-select {
+                position: relative;
+                justify-self: end;
+            }
+            
+            .custom-select select {
+                display: none;
+                /*hide original SELECT element:*/
+            }
+            
+            .select-selected {
+                background-color: #ffffff;
+            }
+            /*style the arrow inside the select element:*/
+            
+            .select-selected:after {
+                position: absolute;
+                content: "";
+                top: 14px;
+                right: 10px;
+                width: 0;
+                height: 0;
+                border: 6px solid transparent;
+                border-color: #000 transparent transparent transparent;
+            }
+            /*point the arrow upwards when the select box is open (active):*/
+            
+            .select-selected.select-arrow-active:after {
+                border-color: transparent transparent #000 transparent;
+                top: 7px;
+            }
+            /*style the items (options), including the selected item:*/
+            
+            .select-items div,
+            .select-selected {
+                color: #000000;
+                padding: 8px 16px;
+                border: 1px solid #000000;
+                cursor: pointer;
+                user-select: none;
+            }
+            /*style items (options):*/
+            
+            .select-items {
+                position: absolute;
+                background-color: #ffffff;
+                top: 100%;
+                left: 0;
+                right: 0;
+                z-index: 99;
+            }
+            /*hide the items when the select box is closed:*/
+            
+            .select-hide {
+                display: none;
+            }
+            
+            .select-items div {
+                border: 1px solid #000000;
+                border-top: unset;
+            }
+            
+            .select-items div:hover,
+            .same-as-selected {
+                background-color: #2bbff2;
+                color: #ffffff!important;
+                border: 1px solid #2bbff2!important;
+            }
+            
+            .wrapper {
+                display: flex;
+                padding-top: 170px;
+                max-width: 80%;
+                margin-left: 10%;
+            }
+            
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 10px 0;
+            }
+            /* .js-form {
+                display: block;
+                margin-bottom: 15px;
+            }
+            
+            .js-form input {
+                padding: 0;
+                height: initial;
+                width: initial;
+                margin-bottom: 0;
+                display: none;
+                cursor: pointer;
+            }
+            
+            .js-form label {
+                position: relative;
+                cursor: pointer;
+            }
+            
+            .js-form label:before {
+                content: '';
+                -webkit-appearance: none;
+                background-color: transparent;
+                border: 2px solid #0079bf;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+                padding: 10px;
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+                cursor: pointer;
+                margin-right: 5px;
+            }
+            
+            .js-form input:checked+label:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 2px;
+                left: 9px;
+                width: 6px;
+                height: 14px;
+                border: solid #0079bf;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            } */
+            
+            .form {
+                margin: 0px;
+                width: 200px;
+                padding: 10px;
+                flex-shrink: 0;
+            }
+            
+            .card {
+                width: 210px;
+                margin: 15px;
+                text-align: center;
+            }
+            
+            .card__img {
+                width: 100%;
+            }
+            
+            .card__name {
+                font-size: 16px;
+                margin-top: 10px;
+            }
+            
+            .card__price {
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+            
+            .card__description {
+                font-size: 14px;
+                margin-top: 5px;
+            }
+            
+            .root {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            div {
+                margin: 0;
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 10px 30px;
+                font-size: 16px;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-top: 10px;
+                cursor: pointer;
+                border: none;
+            }
+            
+            .btn.btn-primary {
+                background: #2bbff2;
+                color: #ffffff;
+                width: auto;
+            }
+            
+            .btn.btn-secondary {
+                background: #000000;
+                color: #ffffff;
+            }
+            
+            .center {
+                text-align: center;
+                height: 100px;
+                margin-top: 50px;
+            }
+            /*===========FOOTER===========*/
+            
+            .footer-m3 {
+                text-align: center;
+                background: #000000;
+                color: #ffffff;
+                font-size: 12px;
+                width: 100%;
+                height: 40px;
+                padding: 12px;
+            }
