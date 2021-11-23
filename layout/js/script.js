@@ -5,7 +5,7 @@ const template = Handlebars.compile(source);
 const laptops = [{
         size: 'S',
         color: "white",
-        price: '28,00',
+        price: 28.00,
         release_date: 2015,
         name: 'CAMISETA MESCLA',
         img: "imagens/img_2.png",
@@ -14,7 +14,7 @@ const laptops = [{
     {
         size: 'S',
         color: "gray",
-        price: '398,00',
+        price: 398.00,
         release_date: 2016,
         name: 'SAIA EM COURO',
         img: "imagens/img_3.png",
@@ -23,7 +23,7 @@ const laptops = [{
     {
         size: 'S',
         color: "black",
-        price: '398,00',
+        price: 398.00,
         release_date: 2017,
         name: 'CARDIGAN TIGRE',
         img: "imagens/img_4.png",
@@ -32,7 +32,7 @@ const laptops = [{
     {
         size: 'M',
         color: "white",
-        price: '99,90',
+        price: 99.90,
         release_date: 2015,
         name: 'CARDIGAN OFF WHITE',
         img: "imagens/img_5.png",
@@ -41,7 +41,7 @@ const laptops = [{
     {
         size: 'M',
         color: "gray",
-        price: '129,90',
+        price: 129.90,
         release_date: 2016,
         name: 'BODY LEOPARDO',
         img: "imagens/img_6.png",
@@ -50,7 +50,7 @@ const laptops = [{
     {
         size: 'M',
         color: "black",
-        price: '398,00',
+        price: 398.00,
         release_date: 2017,
         name: 'CASACO PELOS',
         img: "imagens/img_7.png",
@@ -59,7 +59,7 @@ const laptops = [{
     {
         size: 'L',
         color: "white",
-        price: '120,00',
+        price: 120.00,
         release_date: 2015,
         name: 'CROPPED STRIPES',
         img: "imagens/img_8.png",
@@ -68,7 +68,7 @@ const laptops = [{
     {
         size: 'L',
         color: "gray",
-        price: '398,00',
+        price: 298.00,
         release_date: 2016,
         name: 'CAMISA TRANSPARENTE',
         img: "imagens/img_9.png",
@@ -77,7 +77,7 @@ const laptops = [{
     {
         size: 'L',
         color: "black",
-        price: '99,00',
+        price: 99.00,
         release_date: 2017,
         name: 'POCHETE CLUTCH',
         img: "imagens/img_10.png",
@@ -88,9 +88,9 @@ const laptops = [{
 let btn = document.querySelector(".submit");
 let reset = document.querySelector(".reset");
 
-// let createFilteredCards = ({ size, color, release_date }) => {
+// let createFilteredCards = ({ size, color, price }) => {
 //   let filters = [];
-//   filters = filters.concat(size, color, release_date);
+//   filters = filters.concat(size, color, price);
 //   let filteredCards = laptops.filter(elem =>
 //     Object.values(elem).some(el => filters.includes(el))
 //   );  
@@ -104,7 +104,7 @@ let createFilteredCards = (obj) => {
     let filteredCards = laptops.filter(elem => {
         let includeColor = true;
         let includeSize = true;
-        let includeDate = true;
+        let includePrice = true;
 
         if (filters.color.length != 0) {
             includeColor = filters.color.includes(elem.color);
@@ -112,10 +112,10 @@ let createFilteredCards = (obj) => {
         if (filters.size.length != 0) {
             includeSize = filters.size.includes(elem.size);
         };
-        if (filters.release_date.length != 0) {
-            includeDate = filters.release_date.includes(elem.release_date);
+        if (filters.price.length != 0) {
+            includePrice = filters.price.includes(elem.price);
         };
-        return includeColor && includeSize && includeDate;
+        return includeColor && includeSize && includePrice;
     })
     render(filteredCards);
 };
@@ -129,7 +129,7 @@ let render = (arr) => {
 
 btn.addEventListener("click", e => {
     e.preventDefault();
-    const filter = { size: [], color: [], release_date: [] };
+    const filter = { size: [], color: [], price: [] };
     const nameArray = document.querySelectorAll('input[type="checkbox"]:checked');
 
     let checkedList = Array.from(nameArray);
@@ -139,8 +139,8 @@ btn.addEventListener("click", e => {
             filter.size.push(elem.value);
         } else if (elem.name == "color") {
             filter.color.push(elem.value);
-        } else if (elem.name == "release_date") {
-            filter.release_date.push(+elem.value);
+        } else if (elem.name == "price") {
+            filter.price.push(+elem.value);
         }
     });
 
